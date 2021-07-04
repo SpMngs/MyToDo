@@ -1,19 +1,23 @@
 import React from "react";
 import TasksLists from "./TasksLists";
 
-const TasksGroups = ({tasksLists}) => {
-  console.log("IN GROUPS", tasksLists);
+const TasksGroups = ({
+    tasksLists,
+    onDelete,
+    onTaskStatusUpdate,
+  }) => {
 
   return (
-      <>
-      {tasksLists?.map((tasksList, index) => (
-        <TasksLists
-          key={index}
-          tasksList={tasksList} 
-        /> ))}
-
+    <>
+        {tasksLists?.map((tasksList, index) => (
+         <TasksLists
+                key={index}
+                tasksList={tasksList} 
+                onDelete={onDelete}
+                onTaskStatusUpdate={onTaskStatusUpdate}
+            /> 
+        ))}
     </>
-
   );
 };
 

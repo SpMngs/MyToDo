@@ -3,11 +3,19 @@ import Task from "./Task";
 import { useState, useEffect } from "react";
 import moment from "moment";
 
-const TasksLists = ({tasksList}) => {
+const TasksLists = ({
+  tasksList,
+  onDelete,
+  onTaskStatusUpdate,
+  }) => {
   
-  console.log("IN LISTS", tasksList);
-
   const [list, setList] = useState(5);
+
+  const findLength = () => {
+
+    return tasksList.todos.length
+  }
+
 
   return (
     <div>
@@ -17,6 +25,7 @@ const TasksLists = ({tasksList}) => {
             <> {moment(tasksList?.date).format("DD, MMM")}</>
           )}
         </h1>
+        <p> () => findLength </p>
 
       </header>
 
@@ -25,9 +34,12 @@ const TasksLists = ({tasksList}) => {
             key={index}
             task={todo}
             listId={id}
+            onDelete={onDelete}
+            onTaskStatusUpdate={onTaskStatusUpdate}
           />       
       ))} 
     </div>
   )
 };
+
 export default TasksLists;
