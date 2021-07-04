@@ -26,10 +26,10 @@ const App = () => {
         flag = true;
         tasksLists[keys].todos.push(newTask);
         setTasksLists(tasksLists);
-        const task = tasksLists;
-        setTasksLists([]);
-        setTasksLists(task);
-        setTasksLists((e) => [...e, task]);
+        // const task = tasksLists;
+        // setTasksLists([]);
+        // setTasksLists(task);
+        // setTasksLists((e) => [...e, task]);
       }
     }
     console.log("flag", flag);
