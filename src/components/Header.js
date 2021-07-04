@@ -1,11 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ToggleViewButton from "./ToggleViewButton";
 
-const Header = ({title}) => {
+const Header = ({title, onTaskAddView, onTaskAddViewFlag}) => {
 
   return (
     <header className="title-bar">
       <h1> {title} </h1>
+      <ToggleViewButton
+          color={onTaskAddViewFlag ? "blue" : "green"}
+          text={onTaskAddViewFlag ? "Show Tasks Lilst" : "Add more Tasks"}
+          onClick={onTaskAddView}
+      />
     </header>
   );
 };

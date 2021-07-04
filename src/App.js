@@ -3,6 +3,7 @@ import { useState } from "react";
 import dummyLists from "./components/dummyLists";
 import dummyTasks from "./components/dummyTasks";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -19,9 +20,10 @@ const App = () => {
           onTaskAddView={() => setTaskAddView(!taskAddView)}
           onTaskAddViewFlag={taskAddView}
         />
-        </div>
-  );
-};
+        <Footer />
+      </div>
+    );
+  };
 
 export default App;
 
