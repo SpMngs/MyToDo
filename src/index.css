@@ -29,6 +29,21 @@ h1 {
   padding-right: 17.5%;
   border-radius: 5px;
 }
+@media screen and (max-width: 636px) {
+  .container {
+    padding-left: 10px;
+  padding-right: 10px;
+  }
+  .modalInner{
+  padding-left:30px !important;
+  padding-right:30px !important;
+    height: 85% !important;
+    width: 90% !important;
+  left: 5% !important;
+  right: 5% !important ;
+    top: 5% !important;
+  }
+}
 
 .header {
   display: flex;
@@ -54,4 +69,220 @@ h1 {
   text-decoration: none;
   font-size: 12px;
   font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 20%;
+  margin: auto;
+}
+
+.task {
+  background: #ffffff;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.082);
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 20px;
+  cursor: pointer;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  justify-content: center;
+}
+
+.taskFlexContainer {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0 10px;
+  text-transform: capitalize;
+  width: 100%;
+}
+.taskFlexContainer input {
+  width: 200px;
+}
+.taskFlexContainer + button {
+  width: 130px;
+  padding: 8px;
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.TodoTask {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.TodoDescription {
+  font-size: 12px !important;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #868686;
+}
+
+.taskStateContainer {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.task.reminder {
+  border-left: 5px solid green;
+}
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-form {
+  margin-bottom: 40px;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input,
+.form-control select {
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check label {
+  flex: 1;
+}
+
+.form-control-check input {
+  flex: 2;
+  height: 20px;
+}
+
+h3 {
+  width: 100%;
+  text-align: center;
+}
+
+.Checkbox {
+  margin: auto 10px auto 0px;
+  cursor: pointer;
+}
+
+.TodoState {
+  padding: 0 5px;
+  text-transform: capitalize;
+  color: white !important;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.205);
+}
+
+.img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+.group-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.from-control-check {
+  display: flex;
+  align-items: center;
+}
+.form-control label {
+  color: #4d4d4d;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-left: 3px;
+}
+.form-control input {
+  font-size: 12px;
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+.tags {
+  background-color: rebeccapurple;
+  margin: 0 10px;
+}
+.modalBack{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 10;
+}
+.modalInner{
+  padding-top: 25px;
+ padding-right: 50px;
+ padding-left: 50px;
+  background: #FDFDFD;
+  border-radius: 8px;
+  position: fixed;
+  height: 85%;
+  width: 40%;
+  left: 30.5%;
+  top: 5%;
+}
+.btnStyle{
+  background: #6495ED;
+  color: white;
+  border: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 25px;
+}
+#submitbtn{
+  display: flex !important;
+          margin-top: 50px !important;
+          width: 100% !important;
+          justify-content: center !important;
+        
 }
