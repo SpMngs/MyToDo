@@ -175,7 +175,7 @@ return (
          </>
       )}
       />
-      <Route path="/about" component={About} />
+      {/* <Route path="/about" component={About} /> */}
       <Footer />
     </div>
   </Router>
