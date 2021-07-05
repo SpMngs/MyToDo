@@ -26,7 +26,7 @@ const App = () => {
   const onAddTask = (task) => {
     const id = shortid.generate();
     const newTask = { id, ...task };
-    
+    console.log(task.taskState)
     var flag = false;
     for (const [keys, _] of tasksLists.entries()) {
       if (tasksLists[keys].date === task.taskDate) {
@@ -135,13 +135,14 @@ const onEditTask = (id, editingText, tag, date, description) => {
 
         if (task.id === id) {
           if (checkValue) {
-            task.taskState = taskState.COMPLETE //"complete";
+            task.taskStatus = taskState.COMPLETE;
           } else {
-            task.taskState = taskState.ACTIVE //"active";
+            task.taskStatus = taskState.ACTIVE;
           }
         }
         return task;
       });
+      
       return item;
     });
     setTasksLists((e) => [...updated]);
@@ -175,7 +176,7 @@ return (
          </>
       )}
       />
-      {/* <Route path="/about" component={About} /> */}
+      <Route path="/about" component={About} />
       <Footer />
     </div>
   </Router>

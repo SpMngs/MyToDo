@@ -4,7 +4,7 @@ import { GrClose } from "react-icons/gr";
 import { useState, useEffect } from "react";
 import { Avatar } from '@material-ui/core'
 import taskState from './taskState';
-import Avatars from './dummyAvatars';
+
 
 const Task = ({task, onDelete , onEdit, onTaskStatusUpdate}) => {
 
@@ -15,16 +15,17 @@ const Task = ({task, onDelete , onEdit, onTaskStatusUpdate}) => {
     const [todoEditing, setTodoEditing] = useState(null);
     
     const findCheckValue = (e) => {
+      console.log(e.target.checked)
         onTaskStatusUpdate(task.id, e?.target?.checked);
       };
 
     const stateColorStyle = () => {
         switch (task?.taskStatus) {
-            case taskState.COMPLETE: //"complete":
+            case taskState.COMPLETE://"complete":
             return {
                 backgroundColor: "#76B947",
             };
-            case taskState.ACTIVE://"active":
+            case  taskState.ACTIVE:
             return {
                 backgroundColor: "#338DFF",
             };
@@ -49,11 +50,11 @@ const Task = ({task, onDelete , onEdit, onTaskStatusUpdate}) => {
 
     const todoStyle = () => {
         switch (task?.taskStatus) {
-          case taskState.COMPLETE://"complete":
+          case  taskState.COMPLETE:
             return {
               textDecoration: "line-through",
             };
-          case taskState.ACTIVE://"active":
+          case  taskState.ACTIVE://"active":
             return {
             };
           default:
@@ -81,7 +82,7 @@ const Task = ({task, onDelete , onEdit, onTaskStatusUpdate}) => {
 
           <div className="taskFlexContainer">
              {todoEditing === task?.id ? (
-              // modal desgin
+              // modal design
              <div className="modalBack">
                  <div className="modalInner">
                     <div
