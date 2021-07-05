@@ -4,6 +4,7 @@ import TasksLists from "./TasksLists";
 const TasksGroups = ({
     tasksLists,
     onDelete,
+    onEdit,
     onTaskStatusUpdate,
   }) => {
 
@@ -14,7 +15,9 @@ const TasksGroups = ({
                 key={index}
                 tasksList={tasksList} 
                 onDelete={onDelete}
+                onEdit = {onEdit}
                 onTaskStatusUpdate={onTaskStatusUpdate}
+              
             /> 
         ))}
     </>

@@ -1,17 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ToggleViewButton from "./ToggleViewButton";
+import {useLocation} from "react-router-dom"
 
 const Header = ({title, onTaskAddView, onTaskAddViewFlag}) => {
+
+  const location = useLocation();
 
   return (
     <header className="title-bar">
       <h1> {title} </h1>
+      {location.pathname === "/" && (
       <ToggleViewButton
           color={onTaskAddViewFlag ? "blue" : "green"}
-          text={onTaskAddViewFlag ? "Show Tasks Lilst" : "Add more Tasks"}
+          text={onTaskAddViewFlag ? "Show Tasks Lists" : "Add more Tasks"}
           onClick={onTaskAddView}
       />
+      )}
     </header>
   );
 };

@@ -5,10 +5,9 @@ import taskState from "./taskState";
 
 const AddTaskField = ({ onAddTask }) => {
 
-  const [taskTitle, setText] = useState("");
+  const [taskTitle, setTitle] = useState("");
   const [taskDescription, setDescription] = useState("");
-  const [reminder, setReminder] = useState(false);
-  const [taskState, setTaskState] = useState("active");
+  const [taskStatus, setTaskStatus] = useState("active");
   const [taskDate, setDate] = useState("");
   const [tag, setTag] = useState("");
 
@@ -16,24 +15,24 @@ const AddTaskField = ({ onAddTask }) => {
     e.preventDefault();
 
     if (!taskTitle) {
-      alert("Please type a itle for your new task");
+      alert("Please type a title for your new task");
       return;
     }
 
+    setTaskStatus(taskState.ACTIVE);
     onAddTask({
       taskTitle,
       taskDescription,
       taskDate,
-      reminder,
-      taskState,
+      taskStatus,
       tag,
     });
     
-    setText("");
+    setTitle("");
     setDescription("");
     setDate("");
-    setTaskState("active");
-    setReminder(false);
+    setTaskStatus(taskState.ACTIVE);
+
   };
 
   return (
@@ -45,7 +44,7 @@ const AddTaskField = ({ onAddTask }) => {
           type="text"
           placeholder="Add a title for your task ..."
           value={taskTitle}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
 
@@ -60,12 +59,12 @@ const AddTaskField = ({ onAddTask }) => {
         />
       </div>
       
-      <div style={{ width: "50%" }} className="form-control">
+      <div style={{ width: "40%" }} className="form-control">
         <label> Tags </label>
         <select
           required
           type="text"
-          placeholder="Add Tag"
+          placeholder="Add a Tag"
           value={tag}
           onChange={(e) => setTag(e.target.value)}
         >
@@ -82,7 +81,7 @@ const AddTaskField = ({ onAddTask }) => {
       </div>
       
       <div style={{ display: "flex", alignItems: "center" }}>
-        <div className="form-control" style={{ width: "100%" }}>
+        <div className="form-control" style={{ width: "40%" }}>
           <label>Select a Date </label>
           <input
             className="dateinput"
@@ -92,20 +91,6 @@ const AddTaskField = ({ onAddTask }) => {
           />
         </div>
 
-        <div
-          className="group-submit"
-          style={{ paddingLeft: "10%", paddingTop: "25px" }}
-        >
-          <div className="form-control d-flex from-control-check">
-            <label>Set Reminder </label>
-            <input
-              type="checkbox"
-              checked={reminder}
-              value={reminder}
-              onChange={(e) => setReminder(e.currentTarget.checked)}
-            />
-          </div>
-        </div>
       </div>
       <div className="submitbtn" id="submitbtn">
         <input type="submit" value="Submit Task" className="btn" />
