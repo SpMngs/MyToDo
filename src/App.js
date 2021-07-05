@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import dummyLists from "./components/dummyLists";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -10,7 +10,7 @@ import TasksGroups from "./components/TasksGroups";
 import AddTaskField from "./components/AddTaskField";
 import shortid from "shortid";
 import swal from "sweetalert";
-import { blue, purple } from "@material-ui/core/colors";
+import createHistory from "history/createBrowserHistory"
 
 const App = () => {
 
@@ -150,7 +150,7 @@ const onEditTask = (id, editingText, tag, date, description) => {
 
 // ********** App main body ***************************
 return (
-  <Router>
+  <Router history={createHistory({ basename: process.env.PUBLIC_URL })}>
     <div className="container">
       <Header
         title="My ToDo List"
