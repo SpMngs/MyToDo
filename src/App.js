@@ -10,7 +10,7 @@ import TasksGroups from "./components/TasksGroups";
 import AddTaskField from "./components/AddTaskField";
 import shortid from "shortid";
 import swal from "sweetalert";
-import createHistory from "history/createBrowserHistory"
+
 
 const App = () => {
 
@@ -150,7 +150,7 @@ const onEditTask = (id, editingText, tag, date, description) => {
 
 // ********** App main body ***************************
 return (
-  <Router history={createHistory({ basename: process.env.PUBLIC_URL })}>
+  <Router >
     <div className="container">
       <Header
         title="My ToDo List"
