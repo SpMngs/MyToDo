@@ -1,6 +1,6 @@
 {
-  "homepage": "http://SpMngs.github.io/",
-  "name": "to-do-ireport",
+  "homepage": "http://SpMngs.github.io/MyToDo",
+  "name": "MyToDo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
